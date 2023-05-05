@@ -36,12 +36,19 @@ export class DataMapperApiService {
     });
   }; */
 
-  private getHeaders = () => {
+  /*  private getHeaders = () => {
     return new Headers({
       Accept: 'application/json',
       'Content-Type': 'application/json',
       'api-version': dataMapperApiVersions.Oct2019Edge,
     });
+  };*/
+  private getHeaders = () => {
+    return [
+      ['Accept', 'application/json'],
+      ['Content-Type', 'application/json'],
+      ['api-version', dataMapperApiVersions.Oct2019Edge],
+    ] as [string, string][];
   };
 
   /********* URIs *********/

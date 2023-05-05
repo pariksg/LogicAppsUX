@@ -28,6 +28,14 @@
       {
         "command": "azureDataMapper.loadDataMapFile",
         "title": "Data Mapper: Load existing data map"
+      },
+      {
+        "command": "azureDataMapper.generateXslt",
+        "title": "Data Mapper: Generate XSLT"
+      },
+      {
+        "command": "azureDataMapper.testMap",
+        "title": "Data Mapper: Test map"
       }
     ],
     "views": {
@@ -62,6 +70,16 @@
       "azureDataMapper.dataMapperMenu": [
         {
           "command": "azureDataMapper.loadDataMapFile",
+          "group": "navigation",
+          "when": "resourceExtname in azureDataMapper.supportedDataMapDefinitionFileExts"
+        },
+        {
+          "command": "azureDataMapper.generateXslt",
+          "group": "navigation",
+          "when": "resourceExtname in azureDataMapper.supportedDataMapDefinitionFileExts"
+        },
+        {
+          "command": "azureDataMapper.testMap",
           "group": "navigation",
           "when": "resourceExtname in azureDataMapper.supportedDataMapDefinitionFileExts"
         }
