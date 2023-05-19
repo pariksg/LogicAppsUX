@@ -210,7 +210,10 @@ const generateXsltCmd = async (context: IActionContext, uri: Uri) => {
   }
 
   generateDataMapXslt(mapDefinition)
-    .then((xsltStr) => saveDataMap(dataMapName, xsltStr))
+    .then((xsltStr) => {
+      saveDataMap(dataMapName, xsltStr);
+      window.showInformationMessage('XSLT generated and saved for map ' + dataMapName);
+    })
     .catch((error) => {
       window.showErrorMessage('Generate XSLT command failed');
 
